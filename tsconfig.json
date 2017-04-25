@@ -1,0 +1,14 @@
+{
+    "compilerOptions": {
+        "target": "es5",
+        "noImplicitAny": false,
+        "sourceMap": true,
+        "strictNullChecks": true,
+        "noUnusedParameters": false,
+        "removeComments": false,
+        "lib": [
+            "dom", "es5", "scripthost", "es2015.promise"
+        ]
+    }
+}
+
