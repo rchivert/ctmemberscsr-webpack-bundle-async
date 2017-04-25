@@ -9,7 +9,6 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@types/es6-promise": "0.0.32",
     "@types/jquery": "^2.0.41",
     "@types/knockout": "^3.4.40",
     "@types/sharepoint": "^2013.1.4"
