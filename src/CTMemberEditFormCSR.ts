@@ -37,7 +37,7 @@ class loggedInUser
 
 	static GetRoles ()
 		{
-		let p: Promise<string[]> = new Promise((resolve, reject) => {
+		let p: Promise<string> = new Promise((resolve, reject) => {
 
 		//  Get the groups the current user belongs to.
 		//
@@ -61,7 +61,7 @@ class loggedInUser
 
 	static GetCTMemberValues ()
 		{
-		let p: Promise<string[]> = new Promise((resolve, reject) => {
+		let p: Promise<string> = new Promise((resolve, reject) => {
 
 		//  Get the prefix for current site SharePoint Groups (e.g. for "Ray Members", the prefix is "Ray").   
 		//
@@ -138,8 +138,9 @@ class myCTMemberEditForm
 		//
 		try
 			{
-			let data1 = await loggedInUser.GetRoles();
-			let data2 = await loggedInUser.GetCTMemberValues();
+			let promise1 = loggedInUser.GetRoles();
+			let promise2 = loggedInUser.GetCTMemberValues();
+			let [data1, data2] = await Promise.all([promise1, promise2]); 
 
 			//  Get the permissions of the logged-in user
 			//    
